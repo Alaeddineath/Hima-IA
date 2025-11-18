@@ -1,0 +1,10 @@
+Flask>=2.2
+flask-cors>=3.0
+transformers>=4.36
+tensorflow>=2.13
+keras>=2.13
+Pillow>=9.5
+opencv-python>=4.6
+librosa>=0.10
+numpy>=1.23
+pandas>=1.5
