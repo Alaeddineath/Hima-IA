@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hima-IA Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <a href="{{ url_for('index') }}" style="text-decoration:none; color:inherit; cursor:pointer;">
+            <h1>
+                <span style="font-size:1.2em;font-family:'Cairo',sans-serif;">حمـــــاية</span> | Hima-IA
+            </h1>
+        </a>
+
+        <a href="{{ url_for('index') }}" style="text-decoration:none; color:inherit; cursor:pointer;">
+            <div class="slogan">
+                <em>Lay Back and Let Hima-IA cook</em>
+            </div>
+        </a>
+    </div>
+<div class="result-section">
+    <div class="result-title">Analysis Result</div>
+    {% if modality == 'text' %}
+        <div><strong>Entered Text:</strong><br>{{ user_input }}</div>
+    {% else %}
+        <div><strong>Processed File:</strong><br>{{ user_input }}</div>
+    {% endif %}
+    
+    <!-- Verdict Line (Bold, Colored) -->
+    <div style="font-weight:bold;margin-bottom: 10px;font-size:1.25em;
+        color: {% if 'بشري' in verdict %}green{% else %}crimson{% endif %};">       
+        {{ verdict }}
+    </div>
+    
+    <!-- Optional: Further Explanation -->
+    <div class="result-explanation" style="margin-bottom:10px;">
+        {{ explanation }}
+    </div>
+    
+    <div class="result-score">
+        Authenticity Score: {{ score }}%
+    </div>
+    <a href="{{ url_for('index') }}" style="text-decoration:none;">
+        <input type="button" value="Analyze Another">
+    </a>
+</div>
+
+</body>
+
+</html>

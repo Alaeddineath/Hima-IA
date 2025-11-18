@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Montserrat:wght@400;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #dbeafe 0%, #d1fae5 100%);
+    color: #223;
+    font-family: 'Montserrat', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+.header {
+    background: linear-gradient(90deg, #48c6ef 0%, #6f86d6 100%);
+    color: #fff;
+    padding: 32px 0 20px 0;
+    text-align: center;
+    border-radius: 0 0 26px 26px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 10px #b8dbfd4d;
+}
+
+.header h1 {
+    font-size: 2.9rem;
+    margin: 0;
+    font-family: 'Cairo', 'Montserrat', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    display: block;
+}
+
+.slogan {
+    font-size: 1.28rem;
+    font-weight: 500;
+    opacity: 0.95;
+    margin-top: 12px;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.4px;
+    text-shadow: 1px 1px 2px #1e5178a3;
+}
+
+.upload-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 44px auto 0 auto;
+    gap: 38px;
+}
+
+.category-box {
+    background: rgba(255, 255, 255, 0.87);
+    border-radius: 22px;
+    box-shadow: 0 6px 32px 0 #8fbae666, 0 2px 8px #c7f8ff44;
+    padding: 32px 28px 28px 28px;
+    width: 345px;
+    text-align: center;
+    transition: 
+        transform 0.18s cubic-bezier(.2,1.5,.5,1), 
+        box-shadow 0.18s;
+    position: relative;
+    z-index: 1;
+    border: 2px solid #c9ecf6;
+    backdrop-filter: blur(2px);
+}
+
+/* Padding adjustment to align buttons */
+.upload-section .category-box:nth-child(1),
+.upload-section .category-box:nth-child(2),
+.upload-section .category-box:nth-child(3) {
+    padding-top: 60px;
+}
+
+.category-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #208eef;
+    margin-bottom: 16px;
+    letter-spacing: 0.7px;
+    text-shadow: 1px 1px 1px #b6daff71;
+}
+
+input[type="file"], textarea {
+    margin: 14px 0 18px 0;
+    width: 90%;
+    border: 1.7px solid #bbe4ea;
+    border-radius: 16px;
+    padding: 12px;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background: #f3f8fc;
+    transition: border 0.2s, box-shadow 0.2s;
+    font-size: 1rem;
+}
+
+textarea:focus, input[type="file"]:focus {
+    outline: none;
+    border: 2px solid #4cabf0;
+    box-shadow: 0 0 8px #a1c4fd66;
+}
+
+input[type="submit"], input[type="button"] {
+    background: linear-gradient(90deg, #43e97b 0%, #38f9d7 100%);
+    color: #222;
+    border: none;
+    border-radius: 16px;
+    padding: 13px 0;
+    width: 86%;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    box-shadow: 0 2px 6px #c6eee9a3;
+    margin-bottom: 2px;
+    margin-top: 7px;
+    transition: background 0.18s, color 0.18s, transform 0.13s;
+}
+
+input[type="submit"]:hover, input[type="button"]:hover {
+    background: linear-gradient(90deg, #38f9d7 0%, #43e97b 100%);
+    color: #208eef;
+    transform: scale(1.04);
+}
+
+.result-section {
+    margin: 54px auto;
+    max-width: 520px;
+    background: #f9fdffea;
+    border-radius: 27px;
+    box-shadow: 0 6px 36px #8fd3f4a5, 0 1px 6px #a9f4cd40;
+    padding: 48px 34px 38px 34px;
+    text-align: center;
+    border: 2.4px solid #bdf1ea;
+}
+
+.result-title {
+    font-size: 2.15rem;
+    color: #23a6d5;
+    font-weight: 700;
+    margin-bottom: 26px;
+    letter-spacing: 0.7px;
+}
+
+.result-score {
+    font-size: 1.45rem;
+    font-weight: bold;
+    color: #13b78e;
+    margin: 26px 0 18px 0;
+    letter-spacing: 0.5px;
+}
+
+.result-explanation {
+    font-size: 1.11rem;
+    margin-bottom: 18px;
+    color: #225c60;
+}
+
+@media (max-width: 1050px) {
+    .upload-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 32px;
+    }
+    .category-box {
+        width: 98vw;
+        min-width: 0;
+        margin-bottom: 13px;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 9px;
+    background: #e7f7fd;
+    border-radius: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background: #a7e2fa;
+    border-radius: 12px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #60d3ec;
+}

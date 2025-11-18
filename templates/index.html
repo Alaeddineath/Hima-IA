@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hima-IA | حمـــــاية</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+    <div class="header">
+        <a href="{{ url_for('index') }}" style="text-decoration:none; color:inherit; cursor:pointer;">
+            <h1>
+                <span style="font-size:1.2em;font-family:'Cairo',sans-serif;">حمـــــاية</span> | Hima-IA
+            </h1>
+        </a>
+
+        <a href="{{ url_for('index') }}" style="text-decoration:none; color:inherit; cursor:pointer;">
+            <div class="slogan">
+                <em>Lay Back and Let Hima-IA cook</em>
+            </div>
+        </a>
+    </div>
+
+    <!-- Arabic Intro Section About the App -->
+    <div class="intro-section"
+        style="max-width:750px;margin:32px auto 18px auto;background:#fff8de;border-radius:18px;padding:22px 32px;font-size:1.18rem;line-height:1.7;">
+        <b>مرحبا بك في منصة حمـــــاية Hima-IA</b> <br>
+        تهدف حمـــــاية إلى مساعدتك في اكتشاف الملفات والصور والفيديوهات والتسجيلات الصوتية والمعلومات الزائفة أو
+        المُزيفة بواسطة الذكاء الاصطناعي. نوفر لك أداة سهلة الاستخدام للتحقق السريع والموثوق من صحة البيانات، حفاظاً
+        عليك وعلى مجتمعك من التضليل الرقمي
+    </div>
+
+    <!-- Arabic Awareness Section About Deepfake -->
+    <div class="awareness-section"
+        style="max-width:750px;margin:0 auto 40px auto;background:#eafff6;border-radius:18px;padding:18px 30px;font-size:1.09rem;line-height:1.55;">
+        <b>ما هو التزييف العميق (Deepfake)؟</b> <br> .التزييف العميق هو تقنية تعتمد على الذكاء الاصطناعي لإنشاء صور أو
+        فيديوهات أو أصوات مُزيفة تبدو واقعية جداً. قد تُستخدم هذه الأدوات لنشر أخبار كاذبة أو للإساءة للأشخاص أو للتلاعب
+        بالرأي العام. من الضروري التحقق من أي محتوى رقمي قبل مشاركته لحماية نفسك ومحيطك
+    </div>
+
+    <div class="upload-section">
+        <!-- IMAGE -->
+        <div class="category-box">
+            <div class="category-title">Analyze Image</div>
+            <form action="{{ url_for('analyze_image') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="image/*" required>
+                <input type="submit" value="Check Image">
+            </form>
+        </div>
+        <!-- VIDEO -->
+        <div class="category-box">
+            <div class="category-title">Analyze Video</div>
+            <form action="{{ url_for('analyze_video') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="video/*" required>
+                <input type="submit" value="Check Video">
+            </form>
+        </div>
+        <!-- AUDIO -->
+        <div class="category-box">
+            <div class="category-title">Analyze Audio</div>
+            <form action="{{ url_for('analyze_audio') }}" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" accept="audio/*" required>
+                <input type="submit" value="Check Audio">
+            </form>
+        </div>
+        <!-- TEXT -->
+        <div class="category-box">
+            <div class="category-title">Analyze Text</div>
+            <form action="{{ url_for('analyze_text') }}" method="post">
+                <textarea name="input_text" placeholder="Enter a news headline or claim..." rows="3"
+                    required></textarea>
+                <input type="submit" value="Check Text">
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
